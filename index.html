@@ -4,118 +4,602 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Ngajiyok</title>
+  <title>Ngajiyok — Islamic Lifestyle App</title>
+
+  <meta
+    name="description"
+    content="Ngajiyok adalah aplikasi islami modern untuk dzikir, doa, tahlil, jadwal adzan, dan pembelajaran Islam."
+  />
 
   <style>
+
+    :root{
+      --bg:#081018;
+      --card:#101b2a;
+      --primary:#19c37d;
+      --primary-hover:#16a46a;
+      --gold:#facc15;
+      --text:#f8fafc;
+      --muted:#94a3b8;
+      --border:rgba(255,255,255,0.08);
+    }
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:Arial,sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
     }
 
     body{
-      background:#0f172a;
-      color:white;
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding:24px;
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        sans-serif;
+
+      background:
+        radial-gradient(circle at top left,#123 0%,transparent 35%),
+        radial-gradient(circle at bottom right,#0b5 0%,transparent 25%),
+        var(--bg);
+
+      color:var(--text);
+      overflow-x:hidden;
     }
 
     .container{
-      max-width:700px;
-      text-align:center;
+      width:min(1180px,92%);
+      margin:auto;
     }
 
-    .logo{
-      width:110px;
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+
+      backdrop-filter:blur(16px);
+
+      background:rgba(8,16,24,0.72);
+
+      border-bottom:1px solid var(--border);
+    }
+
+    nav{
+      height:78px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .brand img{
+      width:52px;
+      height:52px;
+      border-radius:18px;
+      object-fit:cover;
+    }
+
+    .brand h1{
+      font-size:22px;
+      font-weight:700;
+      letter-spacing:0.3px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      color:var(--muted);
+      text-decoration:none;
+      transition:0.25s;
+      font-size:15px;
+    }
+
+    .nav-links a:hover{
+      color:white;
+    }
+
+    .hero{
+      min-height:92vh;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+
+      background:rgba(255,255,255,0.05);
+
+      border:1px solid var(--border);
+
+      color:#d1fae5;
+
+      padding:10px 18px;
+
+      border-radius:999px;
+
+      margin-bottom:28px;
+
+      font-size:14px;
+    }
+
+    .hero h2{
+      font-size:64px;
+      line-height:1.1;
+      margin-bottom:24px;
+      letter-spacing:-2px;
+    }
+
+    .hero h2 span{
+      color:var(--gold);
+    }
+
+    .hero p{
+      color:var(--muted);
+      font-size:19px;
+      line-height:1.9;
+      margin-bottom:38px;
+      max-width:640px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+    }
+
+    .btn{
+      text-decoration:none;
+      border:none;
+      cursor:pointer;
+
+      padding:16px 28px;
+
+      border-radius:18px;
+
+      font-size:15px;
+      font-weight:700;
+
+      transition:0.25s;
+    }
+
+    .btn-primary{
+      background:var(--primary);
+      color:white;
+      box-shadow:0 10px 40px rgba(25,195,125,0.28);
+    }
+
+    .btn-primary:hover{
+      background:var(--primary-hover);
+      transform:translateY(-3px);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,0.04);
+      border:1px solid var(--border);
+      color:white;
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,0.08);
+    }
+
+    .phone{
+      position:relative;
+    }
+
+    .phone::before{
+      content:"";
+
+      position:absolute;
+
+      inset:-25px;
+
+      background:
+        radial-gradient(circle,#19c37d55 0%,transparent 70%);
+
+      filter:blur(30px);
+
+      z-index:-1;
+    }
+
+    .phone img{
+      width:100%;
+      border-radius:34px;
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      box-shadow:
+        0 25px 80px rgba(0,0,0,0.45);
+    }
+
+    .features{
+      padding:120px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .section-title h3{
+      font-size:42px;
+      margin-bottom:18px;
+    }
+
+    .section-title p{
+      color:var(--muted);
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:24px;
+    }
+
+    .feature-card{
+      background:rgba(255,255,255,0.04);
+
+      border:1px solid var(--border);
+
+      border-radius:28px;
+
+      padding:34px;
+
+      transition:0.3s;
+    }
+
+    .feature-card:hover{
+      transform:translateY(-8px);
+
+      border-color:rgba(255,255,255,0.16);
+    }
+
+    .feature-icon{
+      width:62px;
+      height:62px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border-radius:18px;
+
+      background:rgba(25,195,125,0.12);
+
+      font-size:28px;
+
       margin-bottom:24px;
     }
 
-    h1{
-      font-size:48px;
-      margin-bottom:16px;
-      color:#facc15;
+    .feature-card h4{
+      margin-bottom:14px;
+      font-size:22px;
     }
 
-    p{
-      font-size:18px;
+    .feature-card p{
+      color:var(--muted);
       line-height:1.8;
-      color:#d1d5db;
-      margin-bottom:32px;
+      font-size:15px;
     }
 
-    .buttons{
+    .footer{
+      padding:60px 0;
+      border-top:1px solid var(--border);
+    }
+
+    .footer-content{
       display:flex;
-      gap:16px;
-      justify-content:center;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
       flex-wrap:wrap;
     }
 
-    a{
+    .footer p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:22px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{
+      color:var(--muted);
       text-decoration:none;
-      padding:14px 24px;
-      border-radius:14px;
-      font-weight:bold;
       transition:0.2s;
     }
 
-    .primary{
-      background:#22c55e;
+    .footer-links a:hover{
       color:white;
     }
 
-    .secondary{
-      background:#1e293b;
-      color:white;
-      border:1px solid #334155;
+    @media(max-width:920px){
+
+      .hero-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .hero p{
+        margin-inline:auto;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .hero h2{
+        font-size:48px;
+      }
+
+      .phone{
+        max-width:420px;
+        margin:auto;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
     }
 
-    a:hover{
-      transform:translateY(-2px);
-    }
-
-    footer{
-      margin-top:40px;
-      color:#94a3b8;
-      font-size:14px;
-    }
   </style>
 </head>
+
 <body>
+
+<header>
 
   <div class="container">
 
-    <img
-      class="logo"
-      src="assets/logo.png"
-      alt="Ngajiyok Logo"
-    />
+    <nav>
 
-    <h1>Ngajiyok</h1>
+      <div class="brand">
 
-    <p>
-      Aplikasi islami modern untuk membantu ibadah harian,
-      dzikir, doa, tahlil, jadwal adzan, dan pembelajaran Islam.
-    </p>
+        <img src="assets/logo.png" alt="Ngajiyok Logo">
 
-    <div class="buttons">
-      <a class="primary" href="privacy-policy.html">
-        Privacy Policy
-      </a>
+        <h1>Ngajiyok</h1>
 
-      <a class="secondary" href="terms.html">
-        Terms & Conditions
-      </a>
-    </div>
+      </div>
 
-    <footer>
-      © 2026 Ngajiyok. All rights reserved.
-    </footer>
+      <div class="nav-links">
+
+        <a href="#features">Features</a>
+
+        <a href="privacy-policy.html">
+          Privacy Policy
+        </a>
+
+        <a href="terms.html">
+          Terms
+        </a>
+
+      </div>
+
+    </nav>
 
   </div>
+
+</header>
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-grid">
+
+      <div>
+
+        <div class="badge">
+          ✨ Modern Islamic Application
+        </div>
+
+        <h2>
+
+          Islamic App
+          for
+          <span>Modern Muslims</span>
+
+        </h2>
+
+        <p>
+
+          Ngajiyok membantu aktivitas ibadah harian
+          dengan pengalaman modern, ringan,
+          elegan, dan fokus pada kenyamanan pengguna.
+
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            href="privacy-policy.html"
+            class="btn btn-primary"
+          >
+            Privacy Policy
+          </a>
+
+          <a
+            href="terms.html"
+            class="btn btn-secondary"
+          >
+            Terms & Conditions
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="phone">
+
+        <img
+          src="assets/mockup.png"
+          alt="Ngajiyok App Preview"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="features" id="features">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h3>Main Features</h3>
+
+      <p>
+
+        Dirancang dengan fokus pada performa,
+        kenyamanan membaca,
+        dan pengalaman islami modern.
+
+      </p>
+
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+
+        <div class="feature-icon">
+          📖
+        </div>
+
+        <h4>Dzikir & Doa</h4>
+
+        <p>
+
+          Kumpulan dzikir dan doa harian
+          dengan tampilan bersih dan nyaman dibaca.
+
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <div class="feature-icon">
+          🕌
+        </div>
+
+        <h4>Jadwal Adzan</h4>
+
+        <p>
+
+          Pengingat waktu sholat
+          dengan sistem notifikasi yang ringan dan stabil.
+
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <div class="feature-icon">
+          🌙
+        </div>
+
+        <h4>Tahlil & Yasin</h4>
+
+        <p>
+
+          Bacaan tahlil dan surat pilihan
+          dengan struktur yang mudah dipahami.
+
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <div class="feature-icon">
+          ⚡
+        </div>
+
+        <h4>Fast & Lightweight</h4>
+
+        <p>
+
+          Optimasi performa tinggi
+          agar aplikasi tetap ringan di berbagai perangkat Android.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="footer-content">
+
+      <p>
+        © 2026 Ngajiyok. All rights reserved.
+      </p>
+
+      <div class="footer-links">
+
+        <a href="privacy-policy.html">
+          Privacy Policy
+        </a>
+
+        <a href="terms.html">
+          Terms
+        </a>
+
+        <a href="delete-account.html">
+          Delete Account
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
 
 </body>
 </html>
