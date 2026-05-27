@@ -3,367 +3,88 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
-/>
-
-<title>
-  NgajiYok — Islamic Modern App
-</title>
+<title>NgajiYok</title>
 
 <style>
 
-:root{
-  --bg:#07111d;
-  --card:#101b2b;
-  --gold:#f5c65d;
-  --text:#ffffff;
-  --muted:#cbd5e1;
-  --border:rgba(255,255,255,0.08);
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
 body{
-
-  font-family:
-    Inter,
-    Arial,
-    sans-serif;
-
-  background:var(--bg);
-
-  color:white;
-
-  overflow-x:hidden;
-}
-
-.container{
-  width:min(1180px,92%);
-  margin:auto;
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#07111d;
+    color:white;
 }
 
 header{
-
-  position:fixed;
-
-  top:0;
-  left:0;
-
-  width:100%;
-
-  z-index:999;
-
-  backdrop-filter:blur(16px);
-
-  background:
-    rgba(3,7,15,0.65);
-
-  border-bottom:
-    1px solid rgba(255,255,255,0.05);
+    padding:20px 40px;
+    background:#101b2b;
 }
 
-nav{
-
-  height:82px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.brand{
-
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-.brand img{
-
-  width:50px;
-  height:50px;
-
-  border-radius:16px;
-}
-
-.brand h1{
-
-  font-size:24px;
-  font-weight:800;
-}
-
-.brand span{
-  color:var(--gold);
-}
-
-.nav-links{
-
-  display:flex;
-  gap:28px;
-  align-items:center;
-}
-
-.nav-links a{
-
-  color:white;
-
-  text-decoration:none;
-
-  transition:0.2s;
-}
-
-.nav-links a:hover{
-  color:var(--gold);
+header h1{
+    margin:0;
+    color:#f5c65d;
 }
 
 .hero{
+    min-height:100vh;
 
-  position:relative;
+    display:flex;
+    align-items:center;
 
-  min-height:100vh;
+    background:url("assets/banner.jpg");
+    background-size:cover;
+    background-position:center;
 
-  display:flex;
-  align-items:center;
-
-  background:
-    url("assets/banner.jpg");
-
-  background-size:cover;
-  background-position:center;
-
-  overflow:hidden;
+    position:relative;
 }
 
 .overlay{
+    position:absolute;
+    inset:0;
 
-  position:absolute;
-  inset:0;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(3,7,15,0.92) 0%,
-      rgba(3,7,15,0.70) 35%,
-      rgba(3,7,15,0.40) 60%,
-      rgba(3,7,15,0.82) 100%
-    );
+    background:rgba(0,0,0,0.65);
 }
 
-.hero-content{
+.content{
+    position:relative;
+    z-index:2;
 
-  position:relative;
+    max-width:700px;
 
-  z-index:2;
-
-  width:100%;
+    padding:60px;
 }
 
-.hero-box{
-
-  max-width:620px;
-
-  padding:120px 0;
+h2{
+    font-size:60px;
+    margin-bottom:20px;
 }
 
-.badge{
-
-  display:inline-flex;
-
-  background:
-    rgba(245,198,93,0.12);
-
-  border:
-    1px solid rgba(245,198,93,0.20);
-
-  color:#ffd977;
-
-  padding:12px 18px;
-
-  border-radius:999px;
-
-  margin-bottom:28px;
-}
-
-.hero h2{
-
-  font-size:72px;
-
-  line-height:1.05;
-
-  font-weight:900;
-
-  margin-bottom:24px;
-}
-
-.hero h2 span{
-  color:var(--gold);
-}
-
-.hero p{
-
-  color:#d6deea;
-
-  line-height:1.9;
-
-  font-size:18px;
-
-  margin-bottom:36px;
-}
-
-.hero-buttons{
-
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
+p{
+    line-height:1.8;
+    color:#d6deea;
 }
 
 .btn{
+    display:inline-block;
 
-  text-decoration:none;
+    margin-top:20px;
 
-  padding:16px 28px;
+    padding:14px 24px;
 
-  border-radius:18px;
+    background:#f5c65d;
 
-  font-weight:700;
+    color:black;
 
-  transition:0.25s;
-}
+    text-decoration:none;
 
-.btn-primary{
-
-  background:var(--gold);
-
-  color:#111827;
-}
-
-.btn-secondary{
-
-  background:
-    rgba(255,255,255,0.08);
-
-  border:
-    1px solid rgba(255,255,255,0.08);
-
-  color:white;
-}
-
-.btn:hover{
-  transform:translateY(-3px);
-}
-
-section{
-  padding:120px 0;
-}
-
-.section-title{
-
-  text-align:center;
-
-  margin-bottom:70px;
-}
-
-.section-title h3{
-
-  font-size:46px;
-
-  margin-bottom:18px;
-}
-
-.section-title p{
-
-  color:var(--muted);
-
-  max-width:700px;
-
-  margin:auto;
-
-  line-height:1.9;
-}
-
-.feature-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(260px,1fr));
-
-  gap:24px;
-}
-
-.card{
-
-  background:
-    rgba(255,255,255,0.04);
-
-  border:
-    1px solid rgba(255,255,255,0.06);
-
-  border-radius:30px;
-
-  padding:34px;
-}
-
-.card h4{
-
-  font-size:24px;
-
-  margin-bottom:14px;
-
-  color:var(--gold);
-}
-
-.card p{
-
-  color:var(--muted);
-
-  line-height:1.8;
+    border-radius:12px;
 }
 
 footer{
-
-  border-top:
-    1px solid rgba(255,255,255,0.06);
-
-  padding:40px 0;
-
-  text-align:center;
-
-  color:#94a3b8;
-}
-
-@media(max-width:920px){
-
-  .hero-box{
-
+    padding:30px;
     text-align:center;
-
-    margin:auto;
-  }
-
-  .hero-buttons{
-    justify-content:center;
-  }
-
-  .hero h2{
-    font-size:48px;
-  }
-
-  .nav-links{
-    display:none;
-  }
-
+    color:#94a3b8;
 }
 
 </style>
@@ -374,40 +95,9 @@ footer{
 
 <header>
 
-<div class="container">
-
-<nav>
-
-<div class="brand">
-
-<img
-  src="assets/logo.png"
-  alt="NgajiYok Logo"
->
-
 <h1>
-  Ngaji<span>Yok</span>
+NgajiYok
 </h1>
-
-</div>
-
-<div class="nav-links">
-
-<a href="index.html">Home</a>
-
-<a href="#features">
-Features
-</a>
-
-<a href="privacy-policy.html">
-Privacy Policy
-</a>
-
-</div>
-
-</nav>
-
-</div>
 
 </header>
 
@@ -415,129 +105,27 @@ Privacy Policy
 
 <div class="overlay"></div>
 
-<div class="container hero-content">
-
-<div class="hero-box">
-
-<div class="badge">
-✨ Modern Islamic Application
-</div>
+<div class="content">
 
 <h2>
-
-Al Qur'an Offline
-&
-<span>Adzan Akurat</span>
-
+Al Qur'an Offline & Adzan Akurat
 </h2>
 
 <p>
 
 NgajiYok membantu ibadah harian
-dengan Al-Qur'an offline,
-jadwal adzan akurat,
-dzikir,
-doa,
-Yasin,
-dan Tahlil
-dalam tampilan modern dan premium.
-
-</p>
-
-<div class="hero-buttons">
-
-<a
-  href="privacy-policy.html"
-  class="btn btn-primary"
->
-Privacy Policy
-</a>
-
-<a
-  href="#features"
-  class="btn btn-secondary"
->
-Features
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="features">
-
-<div class="container">
-
-<div class="section-title">
-
-<h3>Main Features</h3>
-
-<p>
-
-Pengalaman islami modern
-dengan desain premium,
+dengan tampilan modern,
 ringan,
 dan nyaman digunakan.
 
 </p>
 
-</div>
-
-<div class="feature-grid">
-
-<div class="card">
-
-<h4>
-Al-Qur'an Offline
-</h4>
-
-<p>
-Membaca Al-Qur'an kapan saja tanpa internet.
-</p>
-
-</div>
-
-<div class="card">
-
-<h4>
-Jadwal Adzan
-</h4>
-
-<p>
-Notifikasi adzan akurat dan stabil.
-</p>
-
-</div>
-
-<div class="card">
-
-<h4>
-Yasin & Tahlil
-</h4>
-
-<p>
-Bacaan lengkap dengan tampilan nyaman.
-</p>
-
-</div>
-
-<div class="card">
-
-<h4>
-Ringan & Cepat
-</h4>
-
-<p>
-Dioptimalkan untuk berbagai perangkat Android.
-</p>
-
-</div>
-
-</div>
+<a
+  class="btn"
+  href="privacy-policy.html"
+>
+Privacy Policy
+</a>
 
 </div>
 
@@ -545,12 +133,7 @@ Dioptimalkan untuk berbagai perangkat Android.
 
 <footer>
 
-<div class="container">
-
-© 2026 NgajiYok.
-All rights reserved.
-
-</div>
+© 2026 NgajiYok
 
 </footer>
 
