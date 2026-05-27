@@ -1,462 +1,372 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 
-  <meta charset="UTF-8"/>
+<meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+/>
 
-  <title>
-    NgajiYok — Al Qur'an Offline & Adzan Akurat
-  </title>
+<title>
+  NgajiYok — Islamic Modern App
+</title>
 
-  <meta
-    name="description"
-    content="NgajiYok adalah aplikasi islami modern dengan Al-Qur'an offline, adzan akurat, dzikir harian, Yasin, dan Tahlil."
-  />
+<style>
 
-  <style>
+:root{
+  --bg:#07111d;
+  --card:#101b2b;
+  --gold:#f5c65d;
+  --text:#ffffff;
+  --muted:#cbd5e1;
+  --border:rgba(255,255,255,0.08);
+}
 
-    :root{
-      --bg:#07111d;
-      --gold:#f5c65d;
-      --gold-soft:#ffd977;
-      --text:#ffffff;
-      --muted:#d4dce7;
-      --border:rgba(255,255,255,0.08);
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    html{
-      scroll-behavior:smooth;
-    }
+body{
 
-    body{
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
 
-      font-family:
-        Inter,
-        system-ui,
-        sans-serif;
+  background:var(--bg);
 
-      background:#07111d;
+  color:white;
 
-      color:white;
+  overflow-x:hidden;
+}
 
-      overflow-x:hidden;
-    }
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
 
-    .container{
-      width:min(1180px,92%);
-      margin:auto;
-    }
+header{
 
-    header{
+  position:fixed;
 
-      position:fixed;
+  top:0;
+  left:0;
 
-      top:0;
-      left:0;
-      width:100%;
+  width:100%;
 
-      z-index:999;
+  z-index:999;
 
-      backdrop-filter:blur(16px);
+  backdrop-filter:blur(16px);
 
-      background:
-        rgba(3,7,15,0.55);
+  background:
+    rgba(3,7,15,0.65);
 
-      border-bottom:
-        1px solid rgba(255,255,255,0.05);
-    }
+  border-bottom:
+    1px solid rgba(255,255,255,0.05);
+}
 
-    nav{
+nav{
 
-      height:82px;
+  height:82px;
 
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-    .brand{
+.brand{
 
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
 
-    .brand img{
+.brand img{
 
-      width:50px;
-      height:50px;
+  width:50px;
+  height:50px;
 
-      border-radius:16px;
-    }
+  border-radius:16px;
+}
 
-    .brand h1{
+.brand h1{
 
-      font-size:24px;
-      font-weight:800;
-    }
+  font-size:24px;
+  font-weight:800;
+}
 
-    .brand span{
-      color:var(--gold);
-    }
+.brand span{
+  color:var(--gold);
+}
 
-    .nav-links{
+.nav-links{
 
-      display:flex;
-      align-items:center;
-      gap:28px;
-    }
+  display:flex;
+  gap:28px;
+  align-items:center;
+}
 
-    .nav-links a{
+.nav-links a{
 
-      text-decoration:none;
+  color:white;
 
-      color:#e8edf5;
+  text-decoration:none;
 
-      font-size:15px;
+  transition:0.2s;
+}
 
-      transition:0.2s;
-    }
+.nav-links a:hover{
+  color:var(--gold);
+}
 
-    .nav-links a:hover{
-      color:var(--gold);
-    }
+.hero{
 
-    .hero{
+  position:relative;
 
-      position:relative;
+  min-height:100vh;
 
-      min-height:100vh;
+  display:flex;
+  align-items:center;
 
-      display:flex;
-      align-items:center;
+  background:
+    url("assets/banner.jpg");
 
-      background:
-        url("assets/banner.jpg");
+  background-size:cover;
+  background-position:center;
 
-      background-size:cover;
-      background-position:center;
+  overflow:hidden;
+}
 
-      overflow:hidden;
-    }
+.overlay{
 
-    .overlay{
+  position:absolute;
+  inset:0;
 
-      position:absolute;
-      inset:0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3,7,15,0.92) 0%,
+      rgba(3,7,15,0.70) 35%,
+      rgba(3,7,15,0.40) 60%,
+      rgba(3,7,15,0.82) 100%
+    );
+}
 
-      background:
-        linear-gradient(
-          90deg,
-          rgba(3,7,15,0.90) 0%,
-          rgba(3,7,15,0.72) 35%,
-          rgba(3,7,15,0.40) 60%,
-          rgba(3,7,15,0.78) 100%
-        );
-    }
+.hero-content{
 
-    .hero-content{
+  position:relative;
 
-      position:relative;
+  z-index:2;
 
-      z-index:2;
+  width:100%;
+}
 
-      width:100%;
-    }
+.hero-box{
 
-    .hero-box{
+  max-width:620px;
 
-      max-width:620px;
+  padding:120px 0;
+}
 
-      padding:100px 0;
-    }
+.badge{
 
-    .hero-badge{
+  display:inline-flex;
 
-      display:inline-flex;
-      align-items:center;
+  background:
+    rgba(245,198,93,0.12);
 
-      background:
-        rgba(245,198,93,0.12);
+  border:
+    1px solid rgba(245,198,93,0.20);
 
-      border:
-        1px solid rgba(245,198,93,0.22);
+  color:#ffd977;
 
-      color:var(--gold-soft);
+  padding:12px 18px;
 
-      padding:12px 18px;
+  border-radius:999px;
 
-      border-radius:999px;
+  margin-bottom:28px;
+}
 
-      margin-bottom:28px;
+.hero h2{
 
-      font-size:14px;
-      font-weight:600;
-    }
+  font-size:72px;
 
-    .hero h2{
+  line-height:1.05;
 
-      font-size:72px;
+  font-weight:900;
 
-      line-height:1.02;
+  margin-bottom:24px;
+}
 
-      font-weight:900;
+.hero h2 span{
+  color:var(--gold);
+}
 
-      letter-spacing:-3px;
+.hero p{
 
-      margin-bottom:24px;
-    }
+  color:#d6deea;
 
-    .hero h2 span{
-      color:var(--gold);
-    }
+  line-height:1.9;
 
-    .hero p{
+  font-size:18px;
 
-      color:var(--muted);
+  margin-bottom:36px;
+}
 
-      line-height:1.9;
+.hero-buttons{
 
-      font-size:18px;
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
 
-      margin-bottom:38px;
-    }
+.btn{
 
-    .hero-buttons{
+  text-decoration:none;
 
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-    }
+  padding:16px 28px;
 
-    .btn{
+  border-radius:18px;
 
-      text-decoration:none;
+  font-weight:700;
 
-      padding:16px 28px;
+  transition:0.25s;
+}
 
-      border-radius:18px;
+.btn-primary{
 
-      font-weight:700;
+  background:var(--gold);
 
-      transition:0.25s;
-    }
+  color:#111827;
+}
 
-    .btn-primary{
+.btn-secondary{
 
-      background:var(--gold);
+  background:
+    rgba(255,255,255,0.08);
 
-      color:#111827;
+  border:
+    1px solid rgba(255,255,255,0.08);
 
-      box-shadow:
-        0 14px 40px rgba(245,198,93,0.25);
-    }
+  color:white;
+}
 
-    .btn-primary:hover{
-      transform:translateY(-3px);
-    }
+.btn:hover{
+  transform:translateY(-3px);
+}
 
-    .btn-secondary{
+section{
+  padding:120px 0;
+}
 
-      background:
-        rgba(255,255,255,0.06);
+.section-title{
 
-      border:
-        1px solid rgba(255,255,255,0.08);
+  text-align:center;
 
-      color:white;
-    }
+  margin-bottom:70px;
+}
 
-    .btn-secondary:hover{
+.section-title h3{
 
-      background:
-        rgba(255,255,255,0.10);
-    }
+  font-size:46px;
 
-    .features{
+  margin-bottom:18px;
+}
 
-      padding:120px 0;
+.section-title p{
 
-      background:
-        linear-gradient(
-          180deg,
-          #07111d 0%,
-          #0a1727 100%
-        );
-    }
+  color:var(--muted);
 
-    .section-title{
+  max-width:700px;
 
-      text-align:center;
+  margin:auto;
 
-      margin-bottom:70px;
-    }
+  line-height:1.9;
+}
 
-    .section-title h3{
+.feature-grid{
 
-      font-size:46px;
+  display:grid;
 
-      margin-bottom:18px;
-    }
+  grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
 
-    .section-title p{
+  gap:24px;
+}
 
-      color:var(--muted);
+.card{
 
-      max-width:760px;
+  background:
+    rgba(255,255,255,0.04);
 
-      margin:auto;
+  border:
+    1px solid rgba(255,255,255,0.06);
 
-      line-height:1.9;
-    }
+  border-radius:30px;
 
-    .feature-grid{
+  padding:34px;
+}
 
-      display:grid;
+.card h4{
 
-      grid-template-columns:
-        repeat(auto-fit,minmax(260px,1fr));
+  font-size:24px;
 
-      gap:24px;
-    }
+  margin-bottom:14px;
 
-    .feature-card{
+  color:var(--gold);
+}
 
-      background:
-        rgba(255,255,255,0.04);
+.card p{
 
-      border:
-        1px solid rgba(255,255,255,0.06);
+  color:var(--muted);
 
-      border-radius:30px;
+  line-height:1.8;
+}
 
-      padding:34px;
+footer{
 
-      transition:0.3s;
-    }
+  border-top:
+    1px solid rgba(255,255,255,0.06);
 
-    .feature-card:hover{
+  padding:40px 0;
 
-      transform:translateY(-8px);
+  text-align:center;
 
-      border-color:
-        rgba(245,198,93,0.18);
-    }
+  color:#94a3b8;
+}
 
-    .feature-icon{
+@media(max-width:920px){
 
-      width:70px;
-      height:70px;
+  .hero-box{
 
-      border-radius:22px;
+    text-align:center;
 
-      display:flex;
-      align-items:center;
-      justify-content:center;
+    margin:auto;
+  }
 
-      background:
-        rgba(245,198,93,0.12);
+  .hero-buttons{
+    justify-content:center;
+  }
 
-      font-size:30px;
+  .hero h2{
+    font-size:48px;
+  }
 
-      margin-bottom:24px;
-    }
+  .nav-links{
+    display:none;
+  }
 
-    .feature-card h4{
+}
 
-      font-size:24px;
-
-      margin-bottom:14px;
-    }
-
-    .feature-card p{
-
-      color:var(--muted);
-
-      line-height:1.8;
-    }
-
-    footer{
-
-      border-top:
-        1px solid rgba(255,255,255,0.06);
-
-      padding:42px 0;
-
-      background:#07111d;
-    }
-
-    .footer-content{
-
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    footer p{
-
-      color:#94a3b8;
-
-      font-size:14px;
-    }
-
-    .footer-links{
-
-      display:flex;
-      gap:22px;
-      flex-wrap:wrap;
-    }
-
-    .footer-links a{
-
-      color:#d6deea;
-
-      text-decoration:none;
-    }
-
-    .footer-links a:hover{
-      color:var(--gold);
-    }
-
-    @media(max-width:920px){
-
-      .hero-box{
-
-        text-align:center;
-
-        margin:auto;
-      }
-
-      .hero-buttons{
-
-        justify-content:center;
-      }
-
-      .hero h2{
-
-        font-size:48px;
-      }
-
-      .nav-links{
-        display:none;
-      }
-
-    }
-
-  </style>
+</style>
 
 </head>
 
@@ -464,228 +374,183 @@
 
 <header>
 
-  <div class="container">
+<div class="container">
 
-    <nav>
+<nav>
 
-      <div class="brand">
+<div class="brand">
 
-        <img
-          src="assets/logo.png"
-          alt="NgajiYok Logo"
-        >
+<img
+  src="assets/logo.png"
+  alt="NgajiYok Logo"
+>
 
-        <h1>
-          Ngaji<span>Yok</span>
-        </h1>
+<h1>
+  Ngaji<span>Yok</span>
+</h1>
 
-      </div>
+</div>
 
-      <div class="nav-links">
+<div class="nav-links">
 
-        <a href="#features">
-          Features
-        </a>
+<a href="index.html">Home</a>
 
-        <a href="privacy-policy.html">
-          Privacy Policy
-        </a>
+<a href="#features">
+Features
+</a>
 
-        <a href="terms.html">
-          Terms
-        </a>
+<a href="privacy-policy.html">
+Privacy Policy
+</a>
 
-      </div>
+</div>
 
-    </nav>
+</nav>
 
-  </div>
+</div>
 
 </header>
 
 <section class="hero">
 
-  <div class="overlay"></div>
+<div class="overlay"></div>
 
-  <div class="container hero-content">
+<div class="container hero-content">
 
-    <div class="hero-box">
+<div class="hero-box">
 
-      <div class="hero-badge">
-        ✨ Modern Islamic Application
-      </div>
+<div class="badge">
+✨ Modern Islamic Application
+</div>
 
-      <h2>
+<h2>
 
-        Al Qur'an Offline
-        &
-        <span>Adzan Akurat</span>
+Al Qur'an Offline
+&
+<span>Adzan Akurat</span>
 
-      </h2>
+</h2>
 
-      <p>
+<p>
 
-        NgajiYok membantu aktivitas ibadah harian
-        dengan Al-Qur'an offline,
-        jadwal adzan akurat,
-        dzikir,
-        doa,
-        Yasin,
-        dan Tahlil
-        dalam tampilan modern dan premium.
+NgajiYok membantu ibadah harian
+dengan Al-Qur'an offline,
+jadwal adzan akurat,
+dzikir,
+doa,
+Yasin,
+dan Tahlil
+dalam tampilan modern dan premium.
 
-      </p>
+</p>
 
-      <div class="hero-buttons">
+<div class="hero-buttons">
 
-        <a
-          href="privacy-policy.html"
-          class="btn btn-primary"
-        >
-          Privacy Policy
-        </a>
+<a
+  href="privacy-policy.html"
+  class="btn btn-primary"
+>
+Privacy Policy
+</a>
 
-        <a
-          href="terms.html"
-          class="btn btn-secondary"
-        >
-          Terms & Conditions
-        </a>
+<a
+  href="#features"
+  class="btn btn-secondary"
+>
+Features
+</a>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
-<section
-  class="features"
-  id="features"
->
+<section id="features">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-title">
+<div class="section-title">
 
-      <h3>
-        Main Features
-      </h3>
+<h3>Main Features</h3>
 
-      <p>
+<p>
 
-        Pengalaman islami modern
-        dengan desain premium,
-        ringan,
-        cepat,
-        dan nyaman digunakan.
+Pengalaman islami modern
+dengan desain premium,
+ringan,
+dan nyaman digunakan.
 
-      </p>
+</p>
 
-    </div>
+</div>
 
-    <div class="feature-grid">
+<div class="feature-grid">
 
-      <div class="feature-card">
+<div class="card">
 
-        <div class="feature-icon">
-          📖
-        </div>
+<h4>
+Al-Qur'an Offline
+</h4>
 
-        <h4>
-          Al-Qur'an Offline
-        </h4>
+<p>
+Membaca Al-Qur'an kapan saja tanpa internet.
+</p>
 
-        <p>
-          Membaca Al-Qur'an kapan saja tanpa internet.
-        </p>
+</div>
 
-      </div>
+<div class="card">
 
-      <div class="feature-card">
+<h4>
+Jadwal Adzan
+</h4>
 
-        <div class="feature-icon">
-          🕌
-        </div>
+<p>
+Notifikasi adzan akurat dan stabil.
+</p>
 
-        <h4>
-          Jadwal Adzan
-        </h4>
+</div>
 
-        <p>
-          Jadwal sholat dan notifikasi adzan akurat.
-        </p>
+<div class="card">
 
-      </div>
+<h4>
+Yasin & Tahlil
+</h4>
 
-      <div class="feature-card">
+<p>
+Bacaan lengkap dengan tampilan nyaman.
+</p>
 
-        <div class="feature-icon">
-          🌙
-        </div>
+</div>
 
-        <h4>
-          Yasin & Tahlil
-        </h4>
+<div class="card">
 
-        <p>
-          Bacaan lengkap dengan tampilan nyaman dibaca.
-        </p>
+<h4>
+Ringan & Cepat
+</h4>
 
-      </div>
+<p>
+Dioptimalkan untuk berbagai perangkat Android.
+</p>
 
-      <div class="feature-card">
+</div>
 
-        <div class="feature-icon">
-          ⚡
-        </div>
+</div>
 
-        <h4>
-          Ringan & Cepat
-        </h4>
-
-        <p>
-          Dioptimalkan untuk berbagai perangkat Android.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 <footer>
 
-  <div class="container">
+<div class="container">
 
-    <div class="footer-content">
+© 2026 NgajiYok.
+All rights reserved.
 
-      <p>
-        © 2026 NgajiYok. All rights reserved.
-      </p>
-
-      <div class="footer-links">
-
-        <a href="privacy-policy.html">
-          Privacy Policy
-        </a>
-
-        <a href="terms.html">
-          Terms
-        </a>
-
-        <a href="delete-account.html">
-          Delete Account
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </footer>
 
