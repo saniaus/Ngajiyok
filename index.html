@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -17,9 +17,6 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #080C14;
-        }
-        .arabic-text {
-            font-family: 'Amiri', serif;
         }
         .gold-gradient {
             background: linear-gradient(135deg, #FFE082 0%, #E5B842 50%, #B8860B 100%);
@@ -40,15 +37,13 @@
     <header class="fixed top-0 left-0 w-full bg-[#080C14]/90 backdrop-blur-md z-50 border-b border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3 cursor-pointer" onclick="switchSection('home')">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1A2436] to-[#0D131F] p-1 border border-gray-700 flex items-center justify-center shadow-lg">
-                    <i class="fa-solid fa-book-quran text-[#E5B842] text-xl"></i>
-                </div>
+                <img src="logo.png" alt="Logo Ngaji Yok" class="w-11 h-11 rounded-xl object-cover shadow-md border border-gray-700">
                 <span class="text-2xl font-extrabold tracking-tight text-white">Ngaji<span class="gold-text"> Yok</span></span>
             </div>
 
             <nav class="hidden md:flex items-center space-x-8 font-medium">
                 <button id="nav-home" onclick="switchSection('home')" class="text-white hover:text-[#E5B842] transition py-2 nav-active">Beranda</button>
-                <button id="nav-privacy" onclick="switchSection('privacy')" class="text-gray-400 hover:text-[#E5B842] transition py-2">Kebijakan Privasi</button>
+                <button id="nav-privacy" onclick="switchSection('privacy')" class="text-gray-400 hover:text-[#E5B842] transition py-2">Privacy Policy</button>
             </nav>
 
             <div class="hidden sm:block">
@@ -62,32 +57,22 @@
 
     <main class="pt-24 min-h-screen">
         
-        <section id="section-home" class="block animate-fade-in">
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#E5B842]/5 rounded-full blur-[120px] pointer-events-none"></div>
-
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left z-10">
+        <section id="section-home" class="block">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-6">
                     <div class="inline-flex items-center space-x-2 bg-[#151C2C] border border-[#E5B842]/20 px-4 py-1.5 rounded-full text-xs font-semibold text-[#E5B842]">
                         <i class="fa-solid fa-star text-[10px]"></i>
-                        <span>Ringan • Lengkap • 100% Gratis</span>
+                        <span>Aplikasi Karya Anak Bangsa • Gratis</span>
                     </div>
-                    <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-none">
-                        Ngaji <span class="gold-text">Yok</span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                        Unduh Aplikasi Resmi <span class="gold-text">Ngaji Yok</span>
                     </h1>
-                    <p class="text-xl sm:text-2xl text-gray-200 font-semibold tracking-wide">
-                        Al Quran Offline, Adzan Akurat, Yasin & Tahlil Lengkap
-                    </p>
-                    <p class="text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed text-base">
-                        Rasakan kemudahan beribadah setiap hari dengan satu aplikasi terintegrasi. Nikmati pembacaan Al-Qur'an secara luring penuh, pengingat waktu sholat presisi, hingga panduan dzikir harian tanpa gangguan iklan yang menginterfensi kekhusyukan Anda.
+                    <p class="text-gray-400 leading-relaxed text-base sm:text-lg">
+                        Nikmati kemudahan membaca Al-Qur'an secara offline, pengingat waktu sholat dan adzan yang akurat, serta panduan lengkap Yasin, Tahlil, dan Dzikir harian tanpa gangguan iklan.
                     </p>
                     
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-2 text-xs font-medium text-gray-300">
-                        <span class="bg-[#111622] border border-gray-800 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-feather text-[#E5B842] mr-1.5"></i> Ringan & Cepat</span>
-                        <span class="bg-[#111622] border border-gray-800 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-ban text-red-400 mr-1.5"></i> Tanpa Iklan Pop-up</span>
-                        <span class="bg-[#111622] border border-gray-800 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-wifi text-green-400 mr-1.5"></i> 100% Offline Mode</span>
-                    </div>
-
-                    <div class="pt-6 flex justify-center lg:justify-start">
+                    <div class="flex justify-center pt-2">
                         <a href="https://play.google.com/store/apps/details?id=com.fajarku.ngajiyuk" target="_blank" class="bg-black border border-gray-700 text-white flex items-center px-6 py-3 rounded-xl transition duration-300 hover:border-[#E5B842] hover:bg-[#111622] shadow-xl group">
                             <svg class="w-8 h-8 mr-4 text-white group-hover:text-[#E5B842] transition" viewBox="0 0 512 512" fill="currentColor">
                                 <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58 33.4-60.1-60.1 60.1-60.1 58 33.4c13.1 7.6 21.8 19.7 21.8 36.6s-8.7 29-21.8 36.7zM104.6 499l220.7-126.7-60.1-60.1L104.6 499z"/>
@@ -100,149 +85,175 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 flex justify-center items-center z-10">
-                    <div class="relative w-72 h-[580px] bg-[#0B0F19] border-[6px] border-gray-800 rounded-[40px] shadow-2xl overflow-hidden shadow-black/80">
-                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-5 bg-gray-800 rounded-b-xl z-20"></div>
-                        
-                        <div class="p-4 pt-8 space-y-4 h-full bg-[#0D131F] text-xs">
-                            <div class="flex justify-between items-center text-gray-400">
-                                <span>Assalamu'alaikum</span>
-                                <span class="bg-[#1A2436] px-2 py-0.5 rounded text-[10px] text-[#E5B842]">15 Dzulqa'dah</span>
-                            </div>
-                            
-                            <div class="bg-gradient-to-r from-[#151C2C] to-[#1C263C] p-3 rounded-2xl border border-gray-800">
-                                <p class="text-gray-400 text-[10px]">WAKTU IMSAK BERIKUTNYA</p>
-                                <p class="text-xl font-bold text-white mt-1">Imsak</p>
-                                <p class="text-2xl font-extrabold text-[#E5B842] mt-2">04:26</p>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-2 text-center text-[11px]">
-                                <div class="bg-[#151C2C] p-2.5 rounded-xl border border-gray-800/60"><i class="fa-solid fa-book-open text-[#E5B842] mb-1 block text-base"></i> Al-Qur'an</div>
-                                <div class="bg-[#151C2C] p-2.5 rounded-xl border border-gray-800/60"><i class="fa-solid fa-mosque text-[#E5B842] mb-1 block text-base"></i> Jadwal Sholat</div>
-                                <div class="bg-[#151C2C] p-2.5 rounded-xl border border-gray-800/60"><i class="fa-solid fa-compass text-[#E5B842] mb-1 block text-base"></i> Arah Kiblat</div>
-                                <div class="bg-[#151C2C] p-2.5 rounded-xl border border-gray-800/60"><i class="fa-solid fa-hands-praying text-[#E5B842] mb-1 block text-base"></i> Doa Harian</div>
-                            </div>
-
-                            <div class="border-t border-gray-800/80 my-2"></div>
-                            
-                            <div class="space-y-1.5 overflow-hidden">
-                                <div class="p-2 bg-[#111622] rounded-lg flex justify-between items-center">
-                                    <div><span class="text-[#E5B842] font-bold">1.</span> Al-Fatihah</div>
-                                    <span class="arabic-text text-base text-[#E5B842]">الفاتحة</span>
-                                </div>
-                                <div class="p-2 bg-[#111622] rounded-lg flex justify-between items-center">
-                                    <div><span class="text-[#E5B842] font-bold">2.</span> Al-Baqarah</div>
-                                    <span class="arabic-text text-base text-[#E5B842]">البقرة</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl shadow-black/80 border border-gray-800/60">
+                    <img src="image_69a096.jpg" alt="Ngaji Yok App Showcase Banner" class="w-full h-auto object-cover block">
                 </div>
-            </div>
 
-            <div class="bg-[#0B0F19] border-y border-gray-900 py-16">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-12">
-                        <h2 class="text-3xl font-extrabold text-white tracking-tight">Fitur Utama Aplikasi</h2>
-                        <p class="text-gray-400 mt-2">Segala instrumen penunjang ibadah harian Anda dirangkum secara ringkas dan praktis.</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                        <div class="bg-[#121824] p-6 rounded-2xl border border-gray-800 hover:border-[#E5B842]/40 transition duration-300">
-                            <div class="w-12 h-12 rounded-xl bg-[#1A2333] flex items-center justify-center text-[#E5B842] text-xl mb-4 shadow-md">
-                                <i class="fa-solid fa-book-open"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-white mb-2">Al-Qur'an Offline</h3>
-                            <p class="text-xs text-gray-400 leading-relaxed">Akses seluruh mushaf 114 Surah tanpa butuh jaringan internet sama sekali.</p>
-                        </div>
-                        <div class="bg-[#121824] p-6 rounded-2xl border border-gray-800 hover:border-[#E5B842]/40 transition duration-300">
-                            <div class="w-12 h-12 rounded-xl bg-[#1A2333] flex items-center justify-center text-[#E5B842] text-xl mb-4 shadow-md">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-white mb-2">Jadwal Sholat</h3>
-                            <p class="text-xs text-gray-400 leading-relaxed">Perhitungan waktu sholat otomatis berbasis koordinat GPS lokasi Anda.</p>
-                        </div>
-                        <div class="bg-[#121824] p-6 rounded-2xl border border-gray-800 hover:border-[#E5B842]/40 transition duration-300">
-                            <div class="w-12 h-12 rounded-xl bg-[#1A2333] flex items-center justify-center text-[#E5B842] text-xl mb-4 shadow-md">
-                                <i class="fa-solid fa-bell"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-white mb-2">Adzan Akurat</h3>
-                            <p class="text-xs text-gray-400 leading-relaxed">Notifikasi kumandang adzan real-time tepat waktu saat memasuki waktu sholat.</p>
-                        </div>
-                        <div class="bg-[#121824] p-6 rounded-2xl border border-gray-800 hover:border-[#E5B842]/40 transition duration-300">
-                            <div class="w-12 h-12 rounded-xl bg-[#1A2333] flex items-center justify-center text-[#E5B842] text-xl mb-4 shadow-md">
-                                <i class="fa-solid fa-scroll"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-white mb-2">Yasin & Tahlil</h3>
-                            <p class="text-xs text-gray-400 leading-relaxed">Teks bacaan lengkap Yasin, Tahlil, serta doa arwah terintegrasi rapi.</p>
-                        </div>
-                        <div class="bg-[#121824] p-6 rounded-2xl border border-gray-800 hover:border-[#E5B842]/40 transition duration-300">
-                            <div class="w-12 h-12 rounded-xl bg-[#1A2333] flex items-center justify-center text-[#E5B842] text-xl mb-4 shadow-md">
-                                <i class="fa-solid fa-circle-nodes"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-white mb-2">Dzikir & Doa</h3>
-                            <p class="text-xs text-gray-400 leading-relaxed">Kumpulan dzikir pagi petang dan doa harian mustajab pembuka rezeki.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
-        <section id="section-privacy" class="hidden max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
-            <div class="bg-[#111622] border border-gray-800 rounded-3xl p-6 sm:p-10 space-y-6 shadow-xl">
-                <div class="border-b border-gray-800 pb-4">
-                    <h1 class="text-3xl font-extrabold text-white">Kebijakan Privasi</h1>
-                    <p class="text-sm text-gray-400 mt-1">Terakhir Diperbarui: 28 Mei 2026</p>
+        <section id="section-privacy" class="hidden max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="bg-[#111622] border border-gray-800 rounded-3xl p-6 sm:p-10 space-y-6 shadow-xl text-gray-300">
+                
+                <div class="border-b border-gray-800 pb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div class="flex items-center space-x-4">
+                        <img src="logo.png" alt="Ngaji Yok" class="w-14 h-14 rounded-xl object-cover border border-gray-700">
+                        <div>
+                            <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Privacy Policy</h1>
+                            <p class="text-xs text-gray-400 mt-1">Effective Date: October 24, 2024 (Updated for Google Play Compliance)</p>
+                        </div>
+                    </div>
+                    <div class="bg-[#1A2333] border border-gray-800 p-3 rounded-xl text-xs space-y-1 sm:text-right">
+                        <p class="text-gray-400">Developer: <span class="text-white font-semibold">Usman</span></p>
+                        <p class="text-gray-400">Contact: <span class="text-[#E5B842] font-semibold">wirog2420@gmail.com</span></p>
+                    </div>
                 </div>
 
-                <p class="leading-relaxed text-gray-300">
-                    Aplikasi <strong>Ngaji Yok</strong> berkomitmen penuh untuk melindungi privasi penggunanya. Kebijakan privasi ini menjelaskan bagaimana kami mengelola informasi di dalam aplikasi mobile kami.
+                <p class="leading-relaxed text-sm sm:text-base text-gray-300">
+                    The Ngaji Yok application ("the Application") is provided by Usman ("we Nar," "us," or "the Service Provider") as an Ad-Supported Free service. This Privacy Policy describes how we collect, use, and protect your information, with a strict commitment to transparency and user privacy.
                 </p>
 
-                <div>
-                    <h2 class="text-xl font-bold text-white mb-2">1. Pengumpulan Informasi</h2>
-                    <p class="leading-relaxed text-gray-400">
-                        Aplikasi <strong>Ngaji Yok</strong> dibangun sebagai aplikasi yang berfokus penuh pada penggunaan luring (Offline). Kami <strong>tidak mengumpulkan, tidak menyimpan, dan tidak mengirimkan</strong> data pribadi pengguna seperti nama, nomor telepon, alamat email, atau kontak eksternal ke peladen (server) pihak ketiga manapun.
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">1. Information Collection and Use</h2>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        While the Application is built with a "Privacy-First" architecture, we use specific third-party services to provide core functionalities and maintain the service.
                     </p>
+                    
+                    <div class="bg-[#151D2A] p-4 rounded-xl space-y-1.5 border border-gray-800">
+                        <h3 class="text-white font-semibold text-sm sm:text-base">A. Precise Location Data</h3>
+                        <ul class="list-disc pl-5 text-xs sm:text-sm text-gray-400 space-y-1">
+                            <li><strong class="text-gray-300">Purpose:</strong> To calculate accurate Islamic prayer times and determine the Qibla direction based on your exact position.</li>
+                            <li><strong class="text-gray-300">Handling:</strong> Coordinates are processed locally. While stored in the device's DataStore for offline use, this data is never uploaded to our personal servers.</li>
+                            <li><strong class="text-gray-300">Third-Party:</strong> Shared with Google Play Services only for geocoding purposes (identifying city names).</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-[#151D2A] p-4 rounded-xl space-y-1.5 border border-gray-800">
+                        <h3 class="text-white font-semibold text-sm sm:text-base">B. Device Identifiers & Analytics</h3>
+                        <p class="text-xs text-gray-400 mb-1">To improve user experience and app stability, we use Firebase (Google Inc.):</p>
+                        <ul class="list-disc pl-5 text-xs sm:text-sm text-gray-400 space-y-1">
+                            <li><strong class="text-gray-300">Firebase Analytics:</strong> Tracks anonymous usage patterns (e.g., how often the Quran is read).</li>
+                            <li><strong class="text-gray-300">Firebase Remote Config:</strong> Manages app versions and mandatory updates.</li>
+                            <li><strong class="text-gray-300">Firebase In-App Messaging:</strong> Displays important religious announcements or quotes.</li>
+                            <li><strong class="text-gray-300">Data Collected:</strong> Device IDs, app version, and basic interaction logs.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-[#151D2A] p-4 rounded-xl space-y-1.5 border border-gray-800">
+                        <h3 class="text-white font-semibold text-sm sm:text-base">C. Advertising Data (AdMob)</h3>
+                        <p class="text-xs text-gray-400 mb-1">The Application displays advertisements provided by Google AdMob.</p>
+                        <ul class="list-disc pl-5 text-xs sm:text-sm text-gray-400 space-y-1">
+                            <li><strong class="text-gray-300">Data Collected:</strong> AdMob may collect and use advertising IDs (e.g., Android Advertising ID), IP addresses, and device information to serve personalized or non-personalized ads, prevent fraud, and limit ad frequency.</li>
+                            <li><strong class="text-gray-300">User Choice:</strong> Users can manage ad personalization settings through their Android device settings (Google > Ads).</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-[#151D2A] p-4 rounded-xl space-y-1.5 border border-gray-800">
+                        <h3 class="text-white font-semibold text-sm sm:text-base">D. Sensor Data</h3>
+                        <ul class="list-disc pl-5 text-xs sm:text-sm text-gray-400 space-y-1">
+                            <li><strong class="text-gray-300">Magnetometer & Accelerometer:</strong> Used exclusively for the Qibla Finder feature. This data is processed in real-time and is never recorded or transmitted.</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div>
-                    <h2 class="text-xl font-bold text-white mb-2">2. Izin Perangkat (Permissions)</h2>
-                    <p class="leading-relaxed text-gray-400 mb-2">Untuk menyajikan fungsi yang akurat, aplikasi memerlukan izin akses fitur spesifik pada perangkat android Anda:</p>
-                    <ul class="list-disc pl-6 space-y-2 text-gray-400">
-                        <li><strong>Lokasi (Location Access):</strong> Diperlukan murni untuk menghitung koordinat lokal guna menyajikan kalkulasi Waktu Sholat dan Arah Kiblat yang akurat secara real-time. Data lokasi ini diproses secara lokal langsung di dalam memori perangkat Anda dan tidak disimpan secara permanen atau disebarluaskan.</li>
-                        <li><strong>Notifikasi & Penyimpanan:</strong> Digunakan untuk memicu alarm sistem Adzan tepat waktu dan memuat aset text Al-Qur'an lokal secara optimal.</li>
+                <div class="space-y-3">
+                    <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">2. Device Permissions (Android 14 & 15 Compliance)</h2>
+                    <p class="text-sm text-gray-400">The Application requires the following permissions to function reliably:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm">
+                        <div class="bg-[#0E131F] p-3 rounded-lg border border-gray-800/80 flex items-start space-x-2.5">
+                            <i class="fa-solid fa-clock text-[#E5B842] mt-0.5"></i>
+                            <div><strong class="text-white block font-mono text-[11px]">SCHEDULE_EXACT_ALARM</strong> <span class="text-gray-400 text-xs">To trigger Adzan alerts exactly at prayer times.</span></div>
+                        </div>
+                        <div class="bg-[#0E131F] p-3 rounded-lg border border-gray-800/80 flex items-start space-x-2.5">
+                            <i class="fa-solid fa-play text-[#E5B842] mt-0.5"></i>
+                            <div><strong class="text-white block font-mono text-[11px]">FOREGROUND_SERVICE (Media Playback)</strong> <span class="text-gray-400 text-xs">To ensure uninterrupted Murottal (Quran audio) and Adzan playback.</span></div>
+                        </div>
+                        <div class="bg-[#0E131F] p-3 rounded-lg border border-gray-800/80 flex items-start space-x-2.5">
+                            <i class="fa-solid fa-bell text-[#E5B842] mt-0.5"></i>
+                            <div><strong class="text-white block font-mono text-[11px]">POST_NOTIFICATIONS</strong> <span class="text-gray-400 text-xs">To deliver prayer reminders and "Mutiara Hikmah" quotes.</span></div>
+                        </div>
+                        <div class="bg-[#0E131F] p-3 rounded-lg border border-gray-800/80 flex items-start space-x-2.5">
+                            <i class="fa-solid fa-location-dot text-[#E5B842] mt-0.5"></i>
+                            <div><strong class="text-white block font-mono text-[11px]">ACCESS_FINE_LOCATION</strong> <span class="text-gray-400 text-xs">To calculate prayer times based on your current location.</span></div>
+                        </div>
+                        <div class="bg-[#0E131F] p-3 rounded-lg border border-gray-800/80 flex items-start space-x-2.5 md:col-span-2">
+                            <i class="fa-solid fa-power-off text-[#E5B842] mt-0.5"></i>
+                            <div><strong class="text-white block font-mono text-[11px]">RECEIVE_BOOT_COMPLETED</strong> <span class="text-gray-400 text-xs">To restore prayer alarms after a device restart.</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">3. Third-Party Services</h2>
+                    <p class="text-sm text-gray-400">We integrate with the following trusted providers:</p>
+                    <ul class="space-y-2 text-xs sm:text-sm">
+                        <li class="flex items-center justify-between bg-[#0E131F] px-4 py-2.5 rounded-xl border border-gray-800">
+                            <span class="text-gray-300 font-medium">Google AdMob</span>
+                            <a href="https://policies.google.com/privacy" target="_blank" class="text-[#E5B842] hover:underline text-xs inline-flex items-center space-x-1"><span>Privacy Policy</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                        </li>
+                        <li class="flex items-center justify-between bg-[#0E131F] px-4 py-2.5 rounded-xl border border-gray-800">
+                            <span class="text-gray-300 font-medium">Google Firebase</span>
+                            <a href="https://firebase.google.com/support/privacy" target="_blank" class="text-[#E5B842] hover:underline text-xs inline-flex items-center space-x-1"><span>Privacy Policy</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                        </li>
+                        <li class="flex items-center justify-between bg-[#0E131F] px-4 py-2.5 rounded-xl border border-gray-800">
+                            <span class="text-gray-300 font-medium">Google Play Services</span>
+                            <a href="https://policies.google.com/privacy" target="_blank" class="text-[#E5B842] hover:underline text-xs inline-flex items-center space-x-1"><span>Privacy Policy</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                        </li>
+                        <li class="flex items-center justify-between bg-[#0E131F] px-4 py-2.5 rounded-xl border border-gray-800">
+                            <span class="text-gray-300 font-medium">EveryAyah.com</span>
+                            <span class="text-gray-500 text-xs italic">Public repository used for streaming Quran audio. No personal data is shared.</span>
+                        </li>
                     </ul>
                 </div>
 
-                <div>
-                    <h2 class="text-xl font-bold text-white mb-2">3. Layanan Pihak Ketiga</h2>
-                    <p class="leading-relaxed text-gray-400">
-                        Aplikasi kami mendistribusikan pustaka inti Android dasar yang disediakan resmi oleh Google Play Services. Layanan pihak ketiga tersebut tunduk pada kebijakan privasi masing-masing perusahaan penyedia platform distribusi utama:
-                    </p>
-                    <a href="https://policies.google.com/privacy" target="_blank" class="text-[#E5B842] inline-flex items-center space-x-1 font-medium mt-2 hover:underline">
-                        <span>Kebijakan Privasi Google Play Services</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
+                <div class="space-y-2">
+                    <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">4. Data Security & Storage</h2>
+                    <ul class="list-disc pl-5 text-sm text-gray-400 space-y-1">
+                        <li><strong class="text-gray-300">App Sandbox:</strong> Your worship progress (Bookmarks, Amaliah records) is stored within the Android App Sandbox, making it inaccessible to other apps.</li>
+                        <li><strong class="text-gray-300">No Personal Info:</strong> We do not collect names, phone numbers, email addresses (unless you contact us), or financial information.</li>
+                    </ul>
                 </div>
 
-                <div>
-                    <h2 class="text-xl font-bold text-white mb-2">4. Keamanan Data</h2>
-                    <p class="leading-relaxed text-gray-400">
-                        Karena seluruh data operasional aplikasi diproses sepenuhnya di lingkungan penyimpanan sandboxed lokal milik sistem Android perangkat Anda sendiri, keamanan integritas data Anda terjamin mengikuti standar keamanan enkripsi bawaan sistem operasi Android Anda.
+                <div class="space-y-2">
+                    <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">5. External Links</h2>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        The Application contains links to external sites (e.g., hadits.id). We are not responsible for the privacy practices of these external websites.
                     </p>
                 </div>
 
-                <div>
-                    <h2 class="text-xl font-bold text-white mb-2">5. Hubungi Kami</h2>
-                    <p class="leading-relaxed text-gray-400">
-                        Jika Anda memiliki pertanyaan mendalam atau memerlukan klarifikasi terkait transparansi privasi dari aplikasi <strong>Ngaji Yok</strong>, Anda dapat melayangkan pesan komunikasi formal kepada pengembang melalui tautan referensi distribusi di Google Play Store kami.
+                <div class="space-y-2">
+                    <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">6. Children's Privacy</h2>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Ngaji Yok is suitable for all ages. We do not knowingly collect personal identifiable information from children under 13. AdMob is configured to comply with family-friendly ad standards.
                     </p>
                 </div>
 
-                <div class="pt-4 text-center">
-                    <button onclick="switchSection('home')" class="bg-gray-800 text-white font-medium px-6 py-2 rounded-xl transition hover:bg-gray-700">
-                        Kembali ke Beranda
+                <div class="space-y-2">
+                    <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">7. User Control</h2>
+                    <ul class="list-disc pl-5 text-sm text-gray-400 space-y-1">
+                        <li><strong class="text-gray-300">Revoking Access:</strong> You can disable location or notification access in Android Settings.</li>
+                        <li><strong class="text-gray-300">Data Deletion:</strong> Uninstalling the Application or using "Clear Data" in Android Settings will permanently erase all local worship records.</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-2">
+                    <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">8. Changes to This Policy</h2>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        We may update this Privacy Policy to reflect changes in our services or legal requirements. Updates will be posted here with an updated "Effective Date."
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">9. Contact Us</h2>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        For any questions regarding this policy, please contact:<br>
+                        Email: <a href="mailto:wirog2420@gmail.com" class="text-[#E5B842] hover:underline font-medium">wirog2420@gmail.com</a>
+                    </p>
+                </div>
+
+                <div class="pt-6 border-t border-gray-800 text-center">
+                    <button onclick="switchSection('home')" class="bg-gray-800 text-white text-sm font-medium px-6 py-2.5 rounded-xl transition hover:bg-gray-700">
+                        Back to Home
                     </button>
                 </div>
             </div>
@@ -252,12 +263,13 @@
 
     <footer class="bg-[#05080E] border-t border-gray-900 py-8 mt-12 text-sm text-gray-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>
-                &copy; 2026 <span class="text-gray-300 font-semibold">Ngaji Yok</span>. All Rights Reserved.
+            <div class="flex items-center space-x-2">
+                <img src="logo.png" alt="Ngaji Yok Logo" class="w-6 h-6 rounded object-cover">
+                <span>&copy; 2026 <span class="text-gray-300 font-semibold">Ngaji Yok</span>. All Rights Reserved.</span>
             </div>
             <div class="flex space-x-6">
                 <button onclick="switchSection('home')" class="hover:text-white transition">Beranda</button>
-                <button onclick="switchSection('privacy')" class="hover:text-white transition">Kebijakan Privasi</button>
+                <button onclick="switchSection('privacy')" class="hover:text-white transition">Privacy Policy</button>
                 <a href="https://play.google.com/store/apps/details?id=com.fajarku.ngajiyuk" target="_blank" class="hover:text-white transition">Google Play</a>
             </div>
         </div>
