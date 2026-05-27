@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 
 <meta
   name="viewport"
@@ -13,14 +13,32 @@
 NgajiYok — Islamic Modern App
 </title>
 
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+/>
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+/>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+  rel="stylesheet"
+/>
+
 <style>
 
 :root{
-    --bg:#07111d;
-    --card:#101b2b;
-    --gold:#f5c65d;
+    --bg:#050b14;
+    --card:#0d1623;
+    --gold:#f6c453;
+    --gold-soft:#ffdc86;
     --text:#ffffff;
-    --muted:#cbd5e1;
+    --muted:#b8c4d3;
+    --border:rgba(255,255,255,0.08);
 }
 
 *{
@@ -29,9 +47,14 @@ NgajiYok — Islamic Modern App
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
+
     font-family:
-        Arial,
+        "Inter",
         sans-serif;
 
     background:var(--bg);
@@ -42,7 +65,7 @@ body{
 }
 
 .container{
-    width:min(1180px,92%);
+    width:min(1200px,92%);
     margin:auto;
 }
 
@@ -57,10 +80,10 @@ header{
 
     z-index:999;
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(16px);
 
     background:
-        rgba(3,7,15,0.70);
+        rgba(5,11,20,0.55);
 
     border-bottom:
         1px solid rgba(255,255,255,0.05);
@@ -68,7 +91,7 @@ header{
 
 nav{
 
-    height:80px;
+    height:86px;
 
     display:flex;
     align-items:center;
@@ -84,16 +107,20 @@ nav{
 
 .brand img{
 
-    width:50px;
-    height:50px;
+    width:52px;
+    height:52px;
 
-    border-radius:14px;
+    border-radius:18px;
+
+    object-fit:cover;
 }
 
 .brand h1{
 
     font-size:24px;
-    font-weight:bold;
+    font-weight:800;
+
+    letter-spacing:-0.5px;
 }
 
 .brand span{
@@ -104,14 +131,17 @@ nav{
 
     display:flex;
     align-items:center;
-    gap:28px;
+    gap:32px;
 }
 
 .nav-links a{
 
+    text-decoration:none;
+
     color:white;
 
-    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
 
     transition:0.2s;
 }
@@ -122,23 +152,17 @@ nav{
 
 .hero{
 
+    position:relative;
+
     min-height:100vh;
 
     display:flex;
     align-items:center;
 
-    position:relative;
-
-    background:
-        url("assets/banner.jpg");
-
-    background-size:cover;
-    background-position:center;
-
     overflow:hidden;
 }
 
-.overlay{
+.hero-bg{
 
     position:absolute;
     inset:0;
@@ -146,10 +170,35 @@ nav{
     background:
         linear-gradient(
             90deg,
-            rgba(0,0,0,0.88) 0%,
-            rgba(0,0,0,0.55) 50%,
-            rgba(0,0,0,0.82) 100%
+            rgba(4,8,15,0.92) 0%,
+            rgba(4,8,15,0.72) 35%,
+            rgba(4,8,15,0.35) 60%,
+            rgba(4,8,15,0.82) 100%
+        ),
+        url("assets/banner.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-glow{
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    right:-250px;
+    top:-150px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(246,196,83,0.18),
+            transparent 70%
         );
+
+    filter:blur(20px);
 }
 
 .hero-content{
@@ -158,37 +207,51 @@ nav{
 
     z-index:2;
 
-    max-width:650px;
+    width:100%;
 
     padding-top:120px;
 }
 
+.hero-box{
+
+    max-width:640px;
+}
+
 .badge{
 
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
 
     background:
-        rgba(245,198,93,0.12);
+        rgba(246,196,83,0.10);
 
     border:
-        1px solid rgba(245,198,93,0.20);
+        1px solid rgba(246,196,83,0.16);
 
-    color:#ffd977;
+    color:var(--gold-soft);
 
     padding:12px 18px;
 
     border-radius:999px;
 
-    margin-bottom:26px;
+    margin-bottom:28px;
+
+    font-size:14px;
+    font-weight:600;
 }
 
 .hero h2{
 
-    font-size:72px;
+    font-size:82px;
 
-    line-height:1.05;
+    line-height:0.95;
 
-    margin-bottom:24px;
+    font-weight:900;
+
+    letter-spacing:-4px;
+
+    margin-bottom:28px;
 }
 
 .hero h2 span{
@@ -197,13 +260,15 @@ nav{
 
 .hero p{
 
-    color:#d6deea;
+    color:var(--muted);
 
     line-height:1.9;
 
     font-size:18px;
 
-    margin-bottom:36px;
+    max-width:620px;
+
+    margin-bottom:40px;
 }
 
 .hero-buttons{
@@ -217,26 +282,33 @@ nav{
 
     text-decoration:none;
 
-    padding:16px 28px;
+    padding:17px 28px;
 
-    border-radius:14px;
+    border-radius:18px;
 
-    font-weight:bold;
+    font-weight:700;
 
-    transition:0.2s;
+    transition:0.25s;
 }
 
 .btn-primary{
 
     background:var(--gold);
 
-    color:black;
+    color:#111827;
+
+    box-shadow:
+        0 14px 45px rgba(246,196,83,0.22);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
 }
 
 .btn-secondary{
 
     background:
-        rgba(255,255,255,0.08);
+        rgba(255,255,255,0.06);
 
     border:
         1px solid rgba(255,255,255,0.08);
@@ -244,18 +316,50 @@ nav{
     color:white;
 }
 
-.btn:hover{
-    transform:translateY(-3px);
+.btn-secondary:hover{
+
+    background:
+        rgba(255,255,255,0.10);
+}
+
+.stats{
+
+    display:flex;
+    gap:40px;
+
+    margin-top:60px;
+
+    flex-wrap:wrap;
+}
+
+.stat h3{
+
+    font-size:34px;
+
+    color:var(--gold);
+
+    margin-bottom:8px;
+}
+
+.stat p{
+
+    margin:0;
+
+    color:#94a3b8;
+
+    font-size:14px;
 }
 
 .features{
 
-    padding:120px 0;
+    position:relative;
+
+    padding:140px 0;
 
     background:
         linear-gradient(
             180deg,
-            #07111d 0%,
+            #08111c 0%,
             #0b1727 100%
         );
 }
@@ -264,21 +368,23 @@ nav{
 
     text-align:center;
 
-    margin-bottom:70px;
+    margin-bottom:80px;
 }
 
 .section-title h3{
 
-    font-size:46px;
+    font-size:52px;
 
-    margin-bottom:18px;
+    margin-bottom:20px;
+
+    letter-spacing:-2px;
 }
 
 .section-title p{
 
     color:var(--muted);
 
-    max-width:700px;
+    max-width:760px;
 
     margin:auto;
 
@@ -297,48 +403,202 @@ nav{
 
 .card{
 
+    position:relative;
+
+    overflow:hidden;
+
     background:
         rgba(255,255,255,0.04);
 
     border:
         1px solid rgba(255,255,255,0.06);
 
-    border-radius:24px;
+    border-radius:32px;
 
-    padding:34px;
+    padding:38px;
+
+    transition:0.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:
+        rgba(246,196,83,0.18);
+
+    background:
+        rgba(255,255,255,0.06);
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    right:-120px;
+    top:-120px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(246,196,83,0.08),
+            transparent 70%
+        );
+}
+
+.icon{
+
+    width:72px;
+    height:72px;
+
+    border-radius:22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        rgba(246,196,83,0.10);
+
+    margin-bottom:26px;
+
+    font-size:30px;
 }
 
 .card h4{
 
-    color:var(--gold);
-
-    margin-bottom:14px;
-
     font-size:24px;
+
+    margin-bottom:16px;
+
+    color:white;
 }
 
 .card p{
 
-    color:#d6deea;
+    color:var(--muted);
 
     line-height:1.8;
+}
+
+.cta{
+
+    padding:120px 0;
+}
+
+.cta-box{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(246,196,83,0.10),
+            rgba(255,255,255,0.04)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.06);
+
+    border-radius:40px;
+
+    padding:70px;
+
+    text-align:center;
+}
+
+.cta-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(246,196,83,0.12),
+            transparent 35%
+        );
+}
+
+.cta-box h3{
+
+    position:relative;
+
+    font-size:52px;
+
+    margin-bottom:22px;
+
+    letter-spacing:-2px;
+}
+
+.cta-box p{
+
+    position:relative;
+
+    max-width:760px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+    margin-bottom:36px;
 }
 
 footer{
 
     padding:40px 0;
 
-    text-align:center;
-
-    color:#94a3b8;
-
     border-top:
         1px solid rgba(255,255,255,0.06);
+
+    background:#050b14;
 }
 
-@media(max-width:920px){
+.footer-content{
 
-    .hero-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer-content p{
+    color:#94a3b8;
+}
+
+.footer-links{
+
+    display:flex;
+    gap:24px;
+}
+
+.footer-links a{
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+}
+
+.footer-links a:hover{
+    color:var(--gold);
+}
+
+@media(max-width:980px){
+
+    .hero-box{
 
         text-align:center;
 
@@ -349,8 +609,24 @@ footer{
         justify-content:center;
     }
 
+    .stats{
+        justify-content:center;
+    }
+
     .hero h2{
-        font-size:48px;
+        font-size:56px;
+    }
+
+    .section-title h3{
+        font-size:42px;
+    }
+
+    .cta-box{
+        padding:50px 30px;
+    }
+
+    .cta-box h3{
+        font-size:40px;
     }
 
     .nav-links{
@@ -376,7 +652,7 @@ footer{
 <img
   src="assets/logo.png"
   alt="NgajiYok Logo"
->
+/>
 
 <h1>
 Ngaji<span>Yok</span>
@@ -408,34 +684,34 @@ Privacy Policy
 
 <section class="hero">
 
-<div class="overlay"></div>
+<div class="hero-bg"></div>
 
-<div class="container">
+<div class="hero-glow"></div>
 
-<div class="hero-content">
+<div class="container hero-content">
+
+<div class="hero-box">
 
 <div class="badge">
-✨ Modern Islamic Application
+✨ Modern Islamic Lifestyle App
 </div>
 
 <h2>
 
-Al Qur'an Offline
-&
-<span>Adzan Akurat</span>
+Al Qur'an
+<span>Offline</span>
 
 </h2>
 
 <p>
 
-NgajiYok membantu ibadah harian
+NgajiYok menghadirkan pengalaman ibadah modern
 dengan Al-Qur'an offline,
 jadwal adzan akurat,
-dzikir,
-doa,
+dzikir harian,
 Yasin,
-dan Tahlil
-dalam tampilan modern dan premium.
+Tahlil,
+dan tampilan premium yang nyaman digunakan.
 
 </p>
 
@@ -452,8 +728,48 @@ Privacy Policy
   href="#features"
   class="btn btn-secondary"
 >
-Features
+Explore Features
 </a>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+
+<h3>
+100%
+</h3>
+
+<p>
+Offline Quran
+</p>
+
+</div>
+
+<div class="stat">
+
+<h3>
+Accurate
+</h3>
+
+<p>
+Prayer Schedule
+</p>
+
+</div>
+
+<div class="stat">
+
+<h3>
+Modern
+</h3>
+
+<p>
+Islamic Experience
+</p>
+
+</div>
 
 </div>
 
@@ -478,10 +794,10 @@ Main Features
 
 <p>
 
-Pengalaman islami modern
-dengan desain premium,
-ringan,
-dan nyaman digunakan.
+Dirancang dengan fokus pada performa,
+kenyamanan,
+dan pengalaman islami modern
+untuk pengguna masa kini.
 
 </p>
 
@@ -491,51 +807,112 @@ dan nyaman digunakan.
 
 <div class="card">
 
+<div class="icon">
+📖
+</div>
+
 <h4>
 Al-Qur'an Offline
 </h4>
 
 <p>
-Membaca Al-Qur'an kapan saja tanpa internet.
+
+Membaca Al-Qur'an kapan saja
+tanpa koneksi internet.
+
 </p>
 
 </div>
 
 <div class="card">
 
+<div class="icon">
+🕌
+</div>
+
 <h4>
-Jadwal Adzan
+Adzan Akurat
 </h4>
 
 <p>
-Notifikasi adzan akurat dan stabil.
+
+Jadwal sholat dan adzan
+dengan sistem notifikasi stabil.
+
 </p>
 
 </div>
 
 <div class="card">
+
+<div class="icon">
+🌙
+</div>
 
 <h4>
 Yasin & Tahlil
 </h4>
 
 <p>
-Bacaan lengkap dengan tampilan nyaman.
+
+Bacaan lengkap
+dengan tampilan nyaman dibaca.
+
 </p>
 
 </div>
 
 <div class="card">
 
+<div class="icon">
+⚡
+</div>
+
 <h4>
-Ringan & Cepat
+Fast & Lightweight
 </h4>
 
 <p>
-Dioptimalkan untuk berbagai perangkat Android.
+
+Dioptimalkan untuk berbagai
+perangkat Android modern.
+
 </p>
 
 </div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<div class="container">
+
+<div class="cta-box">
+
+<h3>
+Ngaji Lebih Modern
+</h3>
+
+<p>
+
+Pengalaman islami premium
+dengan tampilan modern,
+ringan,
+dan nyaman digunakan
+untuk aktivitas ibadah harian.
+
+</p>
+
+<a
+  href="privacy-policy.html"
+  class="btn btn-primary"
+>
+Read Privacy Policy
+</a>
 
 </div>
 
@@ -547,8 +924,25 @@ Dioptimalkan untuk berbagai perangkat Android.
 
 <div class="container">
 
-© 2026 NgajiYok.
-All rights reserved.
+<div class="footer-content">
+
+<p>
+© 2026 NgajiYok. All rights reserved.
+</p>
+
+<div class="footer-links">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="privacy-policy.html">
+Privacy Policy
+</a>
+
+</div>
+
+</div>
 
 </div>
 
