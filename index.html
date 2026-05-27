@@ -1,20 +1,121 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>Ngajiyok</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:24px;
+    }
+
+    .container{
+      max-width:700px;
+      text-align:center;
+    }
+
+    .logo{
+      width:110px;
+      margin-bottom:24px;
+    }
+
+    h1{
+      font-size:48px;
+      margin-bottom:16px;
+      color:#facc15;
+    }
+
+    p{
+      font-size:18px;
+      line-height:1.8;
+      color:#d1d5db;
+      margin-bottom:32px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:16px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    a{
+      text-decoration:none;
+      padding:14px 24px;
+      border-radius:14px;
+      font-weight:bold;
+      transition:0.2s;
+    }
+
+    .primary{
+      background:#22c55e;
+      color:white;
+    }
+
+    .secondary{
+      background:#1e293b;
+      color:white;
+      border:1px solid #334155;
+    }
+
+    a:hover{
+      transform:translateY(-2px);
+    }
+
+    footer{
+      margin-top:40px;
+      color:#94a3b8;
+      font-size:14px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Ngajiyok</h1>
 
-  <p>
-    Aplikasi islami untuk membantu ibadah harian,
-    dzikir, doa, dan pembelajaran Islam.
-  </p>
+  <div class="container">
 
-  <a href="privacy-policy.html">
-    Privacy Policy
-  </a>
+    <img
+      class="logo"
+      src="assets/logo.png"
+      alt="Ngajiyok Logo"
+    />
+
+    <h1>Ngajiyok</h1>
+
+    <p>
+      Aplikasi islami modern untuk membantu ibadah harian,
+      dzikir, doa, tahlil, jadwal adzan, dan pembelajaran Islam.
+    </p>
+
+    <div class="buttons">
+      <a class="primary" href="privacy-policy.html">
+        Privacy Policy
+      </a>
+
+      <a class="secondary" href="terms.html">
+        Terms & Conditions
+      </a>
+    </div>
+
+    <footer>
+      © 2026 Ngajiyok. All rights reserved.
+    </footer>
+
+  </div>
+
 </body>
 </html>
