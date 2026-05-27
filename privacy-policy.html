@@ -2,550 +2,392 @@
 <html lang="en">
 <head>
 
-  <meta charset="UTF-8" />
+<meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+/>
 
-  <title>
-    Privacy Policy - NgajiYok
-  </title>
+<title>
+Privacy Policy — NgajiYok
+</title>
 
-  <style>
+<style>
 
-    :root{
-      --bg:#07111d;
-      --card:#101b2b;
-      --gold:#f5c65d;
-      --text:#ffffff;
-      --muted:#cbd5e1;
-      --border:rgba(255,255,255,0.08);
-    }
+:root{
+  --bg:#07111d;
+  --card:#101b2b;
+  --gold:#f5c65d;
+  --text:#ffffff;
+  --muted:#cbd5e1;
+}
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    body{
+body{
 
-      font-family:
-        Inter,
-        system-ui,
-        sans-serif;
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
 
-      background:
-        linear-gradient(
-          180deg,
-          #07111d 0%,
-          #0b1727 100%
-        );
+  background:var(--bg);
 
-      color:var(--text);
+  color:white;
 
-      line-height:1.9;
+  line-height:1.9;
+}
 
-      padding:40px 20px;
-    }
+.container{
+  width:min(1000px,92%);
+  margin:auto;
+}
 
-    .container{
+header{
 
-      max-width:900px;
+  position:sticky;
 
-      margin:auto;
-    }
+  top:0;
 
-    .card{
+  z-index:999;
 
-      background:
-        rgba(255,255,255,0.04);
+  backdrop-filter:blur(16px);
 
-      border:
-        1px solid var(--border);
+  background:
+    rgba(3,7,15,0.75);
 
-      border-radius:30px;
+  border-bottom:
+    1px solid rgba(255,255,255,0.05);
+}
 
-      padding:50px;
-    }
+nav{
 
-    h1{
+  height:82px;
 
-      font-size:48px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-      margin-bottom:14px;
+.brand{
 
-      color:var(--gold);
-    }
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
 
-    .meta{
+.brand img{
 
-      color:var(--muted);
+  width:50px;
+  height:50px;
 
-      margin-bottom:40px;
-    }
+  border-radius:16px;
+}
 
-    h2{
+.brand h1{
 
-      margin-top:42px;
-      margin-bottom:18px;
+  font-size:24px;
+  font-weight:800;
+}
 
-      font-size:28px;
+.brand span{
+  color:var(--gold);
+}
 
-      color:var(--gold);
-    }
+.nav-links{
 
-    h3{
+  display:flex;
+  gap:28px;
+}
 
-      margin-top:28px;
-      margin-bottom:14px;
+.nav-links a{
 
-      font-size:22px;
-    }
+  color:white;
 
-    p{
+  text-decoration:none;
+}
 
-      color:#e2e8f0;
+.nav-links a:hover{
+  color:var(--gold);
+}
 
-      margin-bottom:16px;
-    }
+.policy{
 
-    ul{
+  padding:120px 0;
+}
 
-      padding-left:24px;
+.card{
 
-      margin-bottom:18px;
-    }
+  background:
+    rgba(255,255,255,0.04);
 
-    li{
+  border:
+    1px solid rgba(255,255,255,0.06);
 
-      margin-bottom:12px;
+  border-radius:30px;
 
-      color:#d7dee9;
-    }
+  padding:50px;
+}
 
-    a{
+h1{
 
-      color:var(--gold);
+  color:var(--gold);
 
-      text-decoration:none;
-    }
+  font-size:54px;
 
-    strong{
-      color:white;
-    }
+  margin-bottom:20px;
+}
 
-    .footer{
+h2{
 
-      margin-top:50px;
+  color:var(--gold);
 
-      padding-top:24px;
+  margin-top:40px;
+  margin-bottom:16px;
+}
 
-      border-top:
-        1px solid rgba(255,255,255,0.08);
+p,li{
+  color:#d7dee9;
+}
 
-      color:var(--muted);
+ul{
+  padding-left:24px;
+}
 
-      font-size:14px;
-    }
+.meta{
+  margin-bottom:40px;
+}
 
-    @media(max-width:700px){
+footer{
 
-      .card{
-        padding:28px;
-      }
+  border-top:
+    1px solid rgba(255,255,255,0.06);
 
-      h1{
-        font-size:36px;
-      }
+  padding:40px 0;
 
-      h2{
-        font-size:24px;
-      }
+  text-align:center;
 
-    }
+  color:#94a3b8;
+}
 
-  </style>
+@media(max-width:920px){
+
+  .nav-links{
+    display:none;
+  }
+
+  h1{
+    font-size:40px;
+  }
+
+  .card{
+    padding:30px;
+  }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-  <div class="container">
+<header>
 
-    <div class="card">
+<div class="container">
 
-      <h1>
-        Privacy Policy
-      </h1>
+<nav>
 
-      <div class="meta">
+<div class="brand">
 
-        <p>
-          <strong>Effective Date:</strong>
-          October 24, 2024 (Updated for Google Play Compliance)
-        </p>
+<img
+  src="assets/logo.png"
+  alt="NgajiYok Logo"
+>
 
-        <p>
-          <strong>Developer:</strong>
-          Usman
-        </p>
+<h1>
+Ngaji<span>Yok</span>
+</h1>
 
-        <p>
-          <strong>Contact:</strong>
-          wirog2420@gmail.com
-        </p>
+</div>
 
-      </div>
+<div class="nav-links">
 
-      <p>
+<a href="index.html">
+Home
+</a>
 
-        The Ngaji Yok application ("the Application")
-        is provided by Usman ("we," "us,"
-        or "the Service Provider")
-        as an Ad-Supported Free service.
+<a href="privacy-policy.html">
+Privacy Policy
+</a>
 
-      </p>
+</div>
 
-      <p>
+</nav>
 
-        This Privacy Policy describes how we collect,
-        use, and protect your information,
-        with a strict commitment to transparency
-        and user privacy.
+</div>
 
-      </p>
+</header>
 
-      <h2>
-        1. Information Collection and Use
-      </h2>
+<section class="policy">
 
-      <p>
+<div class="container">
 
-        While the Application is built with
-        a "Privacy-First" architecture,
-        we use specific third-party services
-        to provide core functionalities
-        and maintain the service.
+<div class="card">
 
-      </p>
+<h1>
+Privacy Policy
+</h1>
 
-      <h3>
-        A. Precise Location Data
-      </h3>
+<div class="meta">
 
-      <ul>
+<p>
+<strong>
+Effective Date:
+</strong>
 
-        <li>
-          <strong>Purpose:</strong>
-          To calculate accurate Islamic prayer times
-          and determine the Qibla direction
-          based on your exact position.
-        </li>
+October 24, 2024
+</p>
 
-        <li>
-          <strong>Handling:</strong>
-          Coordinates are processed locally.
-          While stored in the device's DataStore
-          for offline use,
-          this data is never uploaded
-          to our personal servers.
-        </li>
+<p>
+<strong>
+Developer:
+</strong>
 
-        <li>
-          <strong>Third-Party:</strong>
-          Shared with Google Play Services
-          only for geocoding purposes
-          (identifying city names).
-        </li>
+Usman
+</p>
 
-      </ul>
+<p>
+<strong>
+Contact:
+</strong>
 
-      <h3>
-        B. Device Identifiers & Analytics
-      </h3>
+wirog2420@gmail.com
+</p>
 
-      <p>
+</div>
 
-        To improve user experience and app stability,
-        we use Firebase (Google Inc.):
+<p>
 
-      </p>
+The Ngaji Yok application
+("the Application")
+is provided by Usman
+as an Ad-Supported Free service.
 
-      <ul>
-
-        <li>
-          <strong>Firebase Analytics:</strong>
-          Tracks anonymous usage patterns
-          (e.g., how often the Quran is read).
-        </li>
-
-        <li>
-          <strong>Firebase Remote Config:</strong>
-          Manages app versions
-          and mandatory updates.
-        </li>
-
-        <li>
-          <strong>Firebase In-App Messaging:</strong>
-          Displays important religious announcements
-          or quotes.
-        </li>
-
-        <li>
-          <strong>Data Collected:</strong>
-          Device IDs,
-          app version,
-          and basic interaction logs.
-        </li>
-
-      </ul>
-
-      <h3>
-        C. Advertising Data (AdMob)
-      </h3>
-
-      <p>
+</p>
 
-        The Application displays advertisements
-        provided by Google AdMob.
+<h2>
+Information Collection and Use
+</h2>
 
-      </p>
+<p>
 
-      <ul>
+The application uses certain
+third-party services
+to provide core functionality.
 
-        <li>
-          <strong>Data Collected:</strong>
-          AdMob may collect and use advertising IDs
-          (e.g., Android Advertising ID),
-          IP addresses,
-          and device information
-          to serve personalized
-          or non-personalized ads,
-          prevent fraud,
-          and limit ad frequency.
-        </li>
+</p>
 
-        <li>
-          <strong>User Choice:</strong>
-          Users can manage ad personalization settings
-          through their Android device settings
-          (Google > Ads).
-        </li>
-
-      </ul>
-
-      <h3>
-        D. Sensor Data
-      </h3>
-
-      <ul>
-
-        <li>
-          <strong>Magnetometer & Accelerometer:</strong>
-          Used exclusively for the Qibla Finder feature.
-          This data is processed in real-time
-          and is never recorded or transmitted.
-        </li>
-
-      </ul>
-
-      <h2>
-        2. Device Permissions (Android 14 & 15 Compliance)
-      </h2>
-
-      <p>
-
-        The Application requires
-        the following permissions
-        to function reliably:
-
-      </p>
-
-      <ul>
+<ul>
 
-        <li>
-          <strong>SCHEDULE_EXACT_ALARM:</strong>
-          To trigger Adzan alerts exactly at prayer times.
-        </li>
+<li>
+Location data is used
+for prayer times
+and Qibla direction.
+</li>
 
-        <li>
-          <strong>FOREGROUND_SERVICE (Media Playback):</strong>
-          To ensure uninterrupted Murottal
-          (Quran audio) and Adzan playback.
-        </li>
+<li>
+Firebase Analytics
+is used for anonymous analytics.
+</li>
 
-        <li>
-          <strong>POST_NOTIFICATIONS:</strong>
-          To deliver prayer reminders
-          and "Mutiara Hikmah" quotes.
-        </li>
+<li>
+AdMob may collect
+advertising identifiers.
+</li>
 
-        <li>
-          <strong>ACCESS_FINE_LOCATION:</strong>
-          To calculate prayer times
-          based on your current location.
-        </li>
+<li>
+Sensor data is used only
+for the Qibla Finder feature.
+</li>
 
-        <li>
-          <strong>RECEIVE_BOOT_COMPLETED:</strong>
-          To restore prayer alarms
-          after a device restart.
-        </li>
+</ul>
 
-      </ul>
+<h2>
+Permissions
+</h2>
 
-      <h2>
-        3. Third-Party Services
-      </h2>
+<ul>
 
-      <p>
-
-        We integrate with
-        the following trusted providers:
+<li>SCHEDULE_EXACT_ALARM</li>
 
-      </p>
+<li>POST_NOTIFICATIONS</li>
 
-      <ul>
+<li>ACCESS_FINE_LOCATION</li>
 
-        <li>Google AdMob</li>
-        <li>Google Firebase</li>
-        <li>Google Play Services</li>
+<li>FOREGROUND_SERVICE</li>
 
-        <li>
-          EveryAyah.com:
-          Public repository used
-          for streaming Quran audio.
-          No personal data is shared.
-        </li>
+<li>RECEIVE_BOOT_COMPLETED</li>
 
-      </ul>
+</ul>
 
-      <h2>
-        4. Data Security & Storage
-      </h2>
+<h2>
+Data Security
+</h2>
 
-      <ul>
+<p>
 
-        <li>
-          <strong>App Sandbox:</strong>
-          Your worship progress
-          (Bookmarks, Amaliah records)
-          is stored within the Android App Sandbox,
-          making it inaccessible to other apps.
-        </li>
+Local worship data
+is stored securely
+inside Android App Sandbox.
 
-        <li>
-          <strong>No Personal Info:</strong>
-          We do not collect names,
-          phone numbers,
-          email addresses
-          (unless you contact us),
-          or financial information.
-        </li>
+</p>
 
-      </ul>
+<h2>
+User Control
+</h2>
 
-      <h2>
-        5. External Links
-      </h2>
+<p>
 
-      <p>
+Users can revoke permissions
+through Android Settings
+or uninstall the app
+to remove local data.
 
-        The Application contains links
-        to external sites
-        (e.g., hadits.id).
+</p>
 
-        We are not responsible
-        for the privacy practices
-        of these external websites.
+<h2>
+Contact
+</h2>
 
-      </p>
+<p>
 
-      <h2>
-        6. Children's Privacy
-      </h2>
+Email:
+wirog2420@gmail.com
 
-      <p>
+</p>
 
-        Ngaji Yok is suitable for all ages.
+</div>
 
-        We do not knowingly collect
-        personal identifiable information
-        from children under 13.
+</div>
 
-        AdMob is configured to comply
-        with family-friendly ad standards.
+</section>
 
-      </p>
+<footer>
 
-      <h2>
-        7. User Control
-      </h2>
+<div class="container">
 
-      <ul>
+© 2026 NgajiYok.
+All rights reserved.
 
-        <li>
-          <strong>Revoking Access:</strong>
-          You can disable location
-          or notification access
-          in Android Settings.
-        </li>
+</div>
 
-        <li>
-          <strong>Data Deletion:</strong>
-          Uninstalling the Application
-          or using "Clear Data"
-          in Android Settings
-          will permanently erase
-          all local worship records.
-        </li>
-
-      </ul>
-
-      <h2>
-        8. Changes to This Policy
-      </h2>
-
-      <p>
-
-        We may update this Privacy Policy
-        to reflect changes in our services
-        or legal requirements.
-
-        Updates will be posted here
-        with an updated "Effective Date."
-
-      </p>
-
-      <h2>
-        9. Contact Us
-      </h2>
-
-      <p>
-
-        For any questions regarding this policy,
-        please contact:
-
-      </p>
-
-      <p>
-        <strong>Email:</strong>
-        wirog2420@gmail.com
-      </p>
-
-      <div class="footer">
-
-        © 2026 NgajiYok.
-        All rights reserved.
-
-      </div>
-
-    </div>
-
-  </div>
+</footer>
 
 </body>
 </html>
