@@ -100,7 +100,8 @@
                         <img src="logo.png" alt="Ngaji Yok" class="w-14 h-14 rounded-xl object-cover border border-gray-700">
                         <div>
                             <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Privacy Policy</h1>
-                            <p class="text-xs text-gray-400 mt-1">Effective Date: October 24, 2024 </p>
+                            <!-- Diperbarui: Tanggal efektif -->
+                            <p class="text-xs text-gray-400 mt-1">Effective Date: June 13, 2024 (Updated)</p>
                         </div>
                     </div>
                     <div class="bg-[#1A2333] border border-gray-800 p-3 rounded-xl text-xs space-y-1 sm:text-right">
@@ -123,8 +124,8 @@
                         <h3 class="text-white font-semibold text-sm sm:text-base">A. Precise Location Data</h3>
                         <ul class="list-disc pl-5 text-xs sm:text-sm text-gray-400 space-y-1">
                             <li><strong class="text-gray-300">Purpose:</strong> To calculate accurate Islamic prayer times and determine the Qibla direction based on your exact position.</li>
-                            <li><strong class="text-gray-300">Handling:</strong> Coordinates are processed locally. While stored in the device's DataStore for offline use, this data is never uploaded to our personal servers.</li>
-                            <li><strong class="text-gray-300">Third-Party:</strong> Shared with Google Play Services only for geocoding purposes (identifying city names).</li>
+                            <li><strong class="text-gray-300">Handling:</strong> Coordinates are processed locally on your device. While stored in the device's DataStore for offline use, this data is never uploaded to our personal servers.</li>
+                            <li><strong class="text-gray-300">Third-Party:</strong> Shared with Google Play Services only for geocoding purposes (identifying city names for display).</li>
                         </ul>
                     </div>
 
@@ -139,26 +140,28 @@
                         </ul>
                     </div>
 
+                    <!-- Diperbarui: Penambahan UMP SDK dan GDPR Compliance -->
                     <div class="bg-[#151D2A] p-4 rounded-xl space-y-1.5 border border-gray-800">
-                        <h3 class="text-white font-semibold text-sm sm:text-base">C. Advertising Data (AdMob)</h3>
+                        <h3 class="text-white font-semibold text-sm sm:text-base">C. Advertising & Consent Management (AdMob & UMP)</h3>
                         <p class="text-xs text-gray-400 mb-1">The Application displays advertisements provided by Google AdMob.</p>
                         <ul class="list-disc pl-5 text-xs sm:text-sm text-gray-400 space-y-1">
-                            <li><strong class="text-gray-300">Data Collected:</strong> AdMob may collect and use advertising IDs (e.g., Android Advertising ID), IP addresses, and device information to serve personalized or non-personalized ads, prevent fraud, and limit ad frequency.</li>
-                            <li><strong class="text-gray-300">User Choice:</strong> Users can manage ad personalization settings through their Android device settings (Google > Ads).</li>
+                            <li><strong class="text-gray-300">Consent Management (GDPR Compliance):</strong> In accordance with Google's latest requirements, we have implemented the User Messaging Platform (UMP) SDK. For users in the European Economic Area (EEA) and the UK, this system manages your preferences for data collection and personalized advertising.</li>
+                            <li><strong class="text-gray-300">Data Collected:</strong> AdMob may collect advertising IDs (e.g., Android Advertising ID), IP addresses, and device information to serve ads, prevent fraud, and limit ad frequency.</li>
+                            <li><strong class="text-gray-300">User Choice:</strong> You can manage or revoke your consent at any time through the "Consent" dialog in the app settings or via your Android device settings (Google > Ads).</li>
                         </ul>
                     </div>
 
                     <div class="bg-[#151D2A] p-4 rounded-xl space-y-1.5 border border-gray-800">
                         <h3 class="text-white font-semibold text-sm sm:text-base">D. Sensor Data</h3>
                         <ul class="list-disc pl-5 text-xs sm:text-sm text-gray-400 space-y-1">
-                            <li><strong class="text-gray-300">Magnetometer & Accelerometer:</strong> Used exclusively for the Qibla Finder feature. This data is processed in real-time and is never recorded or transmitted.</li>
+                            <li><strong class="text-gray-300">Magnetometer & Accelerometer:</strong> Used exclusively for the Qibla Finder feature. This data is processed in real-time and is never recorded, stored, or transmitted.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="space-y-3">
                     <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">2. Device Permissions (Android 14 & 15 Compliance)</h2>
-                    <p class="text-sm text-gray-400">The Application requires the following permissions to function reliably:</p>
+                    <p class="text-sm text-gray-400">The Application requires the following permissions to function reliably on modern Android versions:</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm">
                         <div class="bg-[#0E131F] p-3 rounded-lg border border-gray-800/80 flex items-start space-x-2.5">
                             <i class="fa-solid fa-clock text-[#E5B842] mt-0.5"></i>
@@ -178,7 +181,7 @@
                         </div>
                         <div class="bg-[#0E131F] p-3 rounded-lg border border-gray-800/80 flex items-start space-x-2.5 md:col-span-2">
                             <i class="fa-solid fa-power-off text-[#E5B842] mt-0.5"></i>
-                            <div><strong class="text-white block font-mono text-[11px]">RECEIVE_BOOT_COMPLETED</strong> <span class="text-gray-400 text-xs">To restore prayer alarms after a device restart.</span></div>
+                            <div><strong class="text-white block font-mono text-[11px]">RECEIVE_BOOT_COMPLETED</strong> <span class="text-gray-400 text-xs">To restore prayer alarms automatically after a device restart.</span></div>
                         </div>
                     </div>
                 </div>
@@ -187,8 +190,9 @@
                     <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">3. Third-Party Services</h2>
                     <p class="text-sm text-gray-400">We integrate with the following trusted providers:</p>
                     <ul class="space-y-2 text-xs sm:text-sm">
+                        <!-- Diperbarui: UMP SDK Termasuk di AdMob -->
                         <li class="flex items-center justify-between bg-[#0E131F] px-4 py-2.5 rounded-xl border border-gray-800">
-                            <span class="text-gray-300 font-medium">Google AdMob</span>
+                            <span class="text-gray-300 font-medium">Google AdMob & UMP SDK</span>
                             <a href="https://policies.google.com/privacy" target="_blank" class="text-[#E5B842] hover:underline text-xs inline-flex items-center space-x-1"><span>Privacy Policy</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
                         </li>
                         <li class="flex items-center justify-between bg-[#0E131F] px-4 py-2.5 rounded-xl border border-gray-800">
@@ -201,7 +205,7 @@
                         </li>
                         <li class="flex items-center justify-between bg-[#0E131F] px-4 py-2.5 rounded-xl border border-gray-800">
                             <span class="text-gray-300 font-medium">EveryAyah.com</span>
-                            <span class="text-gray-500 text-xs italic">Public repository used for streaming Quran audio. No personal data is shared.</span>
+                            <span class="text-gray-500 text-xs italic">Public repository used for streaming Quran audio. No personal data is shared with this provider.</span>
                         </li>
                     </ul>
                 </div>
@@ -209,7 +213,7 @@
                 <div class="space-y-2">
                     <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">4. Data Security & Storage</h2>
                     <ul class="list-disc pl-5 text-sm text-gray-400 space-y-1">
-                        <li><strong class="text-gray-300">App Sandbox:</strong> Your worship progress (Bookmarks, Amaliah records) is stored within the Android App Sandbox, making it inaccessible to other apps.</li>
+                        <li><strong class="text-gray-300">App Sandbox:</strong> Your worship progress (Bookmarks, Amaliah records) is stored within the Android App Sandbox, making it inaccessible to other applications.</li>
                         <li><strong class="text-gray-300">No Personal Info:</strong> We do not collect names, phone numbers, email addresses (unless you contact us), or financial information.</li>
                     </ul>
                 </div>
@@ -217,29 +221,29 @@
                 <div class="space-y-2">
                     <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">5. External Links</h2>
                     <p class="text-sm text-gray-400 leading-relaxed">
-                        The Application contains links to external sites (e.g., hadits.id). We are not responsible for the privacy practices of these external websites.
+                        The Application may contain links to external sites (e.g., religious references). We are not responsible for the privacy practices of these external websites.
                     </p>
                 </div>
 
                 <div class="space-y-2">
                     <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">6. Children's Privacy</h2>
                     <p class="text-sm text-gray-400 leading-relaxed">
-                        Ngaji Yok is suitable for all ages. We do not knowingly collect personal identifiable information from children under 13. AdMob is configured to comply with family-friendly ad standards.
+                        Ngaji Yok is suitable for all ages. We do not knowingly collect personal identifiable information from children under 13. AdMob is configured to comply with family-friendly ad standards and COPPA.
                     </p>
                 </div>
 
                 <div class="space-y-2">
                     <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">7. User Control</h2>
                     <ul class="list-disc pl-5 text-sm text-gray-400 space-y-1">
-                        <li><strong class="text-gray-300">Revoking Access:</strong> You can disable location or notification access in Android Settings.</li>
-                        <li><strong class="text-gray-300">Data Deletion:</strong> Uninstalling the Application or using "Clear Data" in Android Settings will permanently erase all local worship records.</li>
+                        <li><strong class="text-gray-300">Revoking Access:</strong> You can disable location or notification access at any time in Android Settings.</li>
+                        <li><strong class="text-gray-300">Data Deletion:</strong> Uninstalling the Application or using "Clear Data" in Android Settings will permanently erase all local worship records and settings.</li>
                     </ul>
                 </div>
 
                 <div class="space-y-2">
                     <h2 class="text-xl font-bold text-white border-l-4 border-[#E5B842] pl-3">8. Changes to This Policy</h2>
                     <p class="text-sm text-gray-400 leading-relaxed">
-                        We may update this Privacy Policy to reflect changes in our services or legal requirements. Updates will be posted here with an updated "Effective Date."
+                        We may update this Privacy Policy to reflect changes in our services or legal requirements. Updates will be posted here with a new "Effective Date."
                     </p>
                 </div>
 
